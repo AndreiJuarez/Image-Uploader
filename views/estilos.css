@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    overflow: hidden;
+    background-color: #051a2d;
+}
+
+@font-face {
+    font-family: 'RubikR';
+    src: url('fonts/Rubik-Regular.ttf');
+}
+
+.control{
+    color: white;
+    font-family: 'RubikR';
+    width: 500px;
+    position: relative;
+    left: 37%;
+    text-align: center;
+}
+
+img{
+    width: 70%;
+}
+
+form{
+    margin-top: 30px;
+}
+
+button{
+    font-family: 'RubikR';
+    font-size: 20px;
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    color: white;
+    background: #ff102b;
+    border: 1px solid #ff102b;
+    cursor: pointer;
+}
+
+.view{
+    margin-top: 50px;
+    height: 40px;
+    background: #0f9d58;
+    padding-top: 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
