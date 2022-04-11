@@ -17,8 +17,7 @@
                 </figure>
                 <div class="post-overlay">
                     <p>
-                        <span class="post-likes">150</span>
-                        <span class="post-comments">10</span>
+                        <span class="post-likes">Clic to see details</span>
                     </p>
                 </div>
             </a>
@@ -33,11 +32,13 @@
                             Image Link, Select All and Copy
                         </div>
                         <div class="copy-text">
-                            <input type="text" class="text" value=<%=entry.file_name%>>
+                            <form action="/delete" method="POST">
+                                <input type="text" class="text" name="img" value=<%=entry.file_name%> readonly>
+                                <br>
+                                <button type="submit">Delete</button>
+                            </form>
                         </div>
-                        <form action="">
-                            <button type="submit">Delete</button>
-                        </form>
+
                     </div>
                     <a href="#" class="modalClose">&times;</a>
                 </div>

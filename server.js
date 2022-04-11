@@ -4,6 +4,7 @@ const multer = require('multer')
 const { v4: uuidv4 } = require('uuid');
 var mysql = require('mysql');
 var bodyParser = require('body-parser')
+var fs = require('fs');
 
 var connection = mysql.createConnection({
     host: 'localhost',
@@ -74,6 +75,19 @@ app.get('/uploads', (req, res) => {
         if (error) throw error;
         var images = results
         res.render('uploads',{imagenes: results})
+    });
+})
+
+app.post('/delete', (req, res) => {
+    let filetoDelete=req.body.img
+    connection.query(`DELETE FROM imagenes WHERE file_name="${filetoDelete}"`, function (error, results, fields) {
+        if (error) throw error;
+        var images = results
+        fs.unlink(`views/${filetoDelete}`, function (err) {
+            if (err) throw err;
+            console.log('Image deleted!');
+            res.redirect("/uploads")
+        });
     });
 })
 
