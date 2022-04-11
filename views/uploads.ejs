@@ -5,93 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles-uploads.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Uploads</title>
 </head>
 <body>
     <section class="post-list">
-        <a href="public/uploads/photo1611437904.jpeg" class="post">
-            <figure class="post-image">
-                <img src="public/uploads/photo1611437904.jpeg" alt="">
-            </figure>
-            <div class="post-overlay">
-                <p>
-                    <span class="post-likes">150</span>
-                    <span class="post-comments">10</span>
-                </p>
+        <% imagenes.forEach(entry =>{%>
+            <a href="#modalbox-<%=entry.file_name%>" class="post">
+                <figure class="post-image">
+                    <img src=<%=entry.file_name%> alt="">
+                </figure>
+                <div class="post-overlay">
+                    <p>
+                        <span class="post-likes">150</span>
+                        <span class="post-comments">10</span>
+                    </p>
+                </div>
+            </a>
+            <div id="modalbox-<%=entry.file_name%>" class="modal">
+                <div class="modalContent">
+                    <h1>Image Details</h1>
+                    <p>You can copy the URL or delete this image</p>
+                    <img src=<%=entry.file_name%> alt="" width="40%">
+                    <br>
+                    <div class="cont">
+                        <div class="label">
+                            Image Link, Select All and Copy
+                        </div>
+                        <div class="copy-text">
+                            <input type="text" class="text" value=<%=entry.file_name%>>
+                        </div>
+                        <form action="">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </div>
+                    <a href="#" class="modalClose">&times;</a>
+                </div>
             </div>
-        </a>
-
-        <a href="" class="post">
-            <figure class="post-image">
-                <img src="public/uploads/image (3).jpg" alt="">
-            </figure>
-            <div class="post-overlay">
-                <p>
-                    <span class="post-likes">150</span>
-                    <span class="post-comments">10</span>
-                </p>
-            </div>
-        </a>
-
-        <a href="" class="post">
-            <figure class="post-image">
-                <img src="imgs/Aticulo.png" alt="">
-            </figure>
-            <div class="post-overlay">
-                <p>
-                    <span class="post-likes">150</span>
-                    <span class="post-comments">10</span>
-                </p>
-            </div>
-        </a>
-
-        <a href="" class="post">
-            <figure class="post-image">
-                <img src="imgs/Aticulo.png" alt="">
-            </figure>
-            <div class="post-overlay">
-                <p>
-                    <span class="post-likes">150</span>
-                    <span class="post-comments">10</span>
-                </p>
-            </div>
-        </a>
-
-        <a href="" class="post">
-            <figure class="post-image">
-                <img src="imgs/Aticulo.png" alt="">
-            </figure>
-            <div class="post-overlay">
-                <p>
-                    <span class="post-likes">150</span>
-                    <span class="post-comments">10</span>
-                </p>
-            </div>
-        </a>
-
-        <a href="" class="post">
-            <figure class="post-image">
-                <img src="imgs/Aticulo.png" alt="">
-            </figure>
-            <div class="post-overlay">
-                <p>
-                    <span class="post-likes">150</span>
-                    <span class="post-comments">10</span>
-                </p>
-            </div>
-        </a>
-
-        <a href="" class="post">
-            <figure class="post-image">
-                <img src="imgs/Aticulo.png" alt="">
-            </figure>
-            <div class="post-overlay">
-                <p>
-                    <span class="post-likes">150</span>
-                    <span class="post-comments">10</span>
-                </p>
-            </div>
-        </a>
+        <% }) %>
     </section>
 </body>
 </html>

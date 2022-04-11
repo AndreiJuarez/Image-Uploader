@@ -60,17 +60,21 @@ app.get('/', (req, res) => {
 })
 
 app.post('/upload', upload.single("image"), (req, res, next) => {
-    console.log(req.file)
+    //console.log(req.file)
     let file_name=req.file.filename;
-    connection.query(`INSERT INTO imagenes (file_name) VALUES ("${file_name}")`, function (error, results, fields) {
+    connection.query(`INSERT INTO imagenes (file_name) VALUES ("public/uploads/${file_name}")`, function (error, results, fields) {
         if (error) throw error;
-        // Callback de error
+        
       });
     res.redirect('/uploads')
 })
 
 app.get('/uploads', (req, res) => {
-    res.render('uploads')
+    connection.query(`SELECT * FROM imagenes ORDER BY id DESC`, function (error, results, fields) {
+        if (error) throw error;
+        var images = results
+        res.render('uploads',{imagenes: results})
+    });
 })
 
 
