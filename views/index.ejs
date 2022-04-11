@@ -11,8 +11,8 @@
     <div class="control">
         <img src="imgs/Logo_andrei.png" alt="">
         <h1>Upload Images from your PC</h1>
-        <form action="" method="POST">
-            <input type="file" name="image" id="">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image">
             <button type="submit">
                 Upload
             </button>

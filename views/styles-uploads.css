@@ -7,7 +7,7 @@ body{
     position: relative;
     top: 50px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 293px));
+    grid-template-columns: repeat(5, minmax(100px, 293px));
     justify-content: center;
     gap: 28px;
 }
