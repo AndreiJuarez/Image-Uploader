@@ -7,7 +7,7 @@ This app was thinking to use with a blog and provide a way to import images from
 - Also you can see a link that provide you a way to import your images to your blog o share it with a friend.
 - Supports at least images up to 8MB.
 
-### Instructions to edit this proyect
+### Instructions to edit this project
 In the case that you want to edit this project, first you need to install all the dependencies of node.js with the package.json, use the command:
 
 `$ npm install`
